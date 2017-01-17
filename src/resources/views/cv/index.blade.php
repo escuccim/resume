@@ -1,38 +1,36 @@
 @extends('layouts.app')
 
 @section('header')
-<style>
-	#sortable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
-	.ui-state-highlight { height: 1.5em; line-height: 1.2em; }
-</style>
+	<style>
+		#sortable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
+		.ui-state-highlight { height: 1.5em; line-height: 1.2em; }
+	</style>
 
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    
-<script>
-$.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-$( function() {
-	$( "#sortable" ).sortable({
-		placeholder: "ui-state-highlight",
-		update: function(event, ui){
-			var data = $(this).sortable('serialize');
-
-			$.ajax({
-				data: data,
-				type: 'POST',
-				url: '/cvadmin/order',
-			});
+	<script>
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 		}
 	});
-	$( "#sortable" ).disableSelection();
-} );
-</script>
+	$( function() {
+		$( "#sortable" ).sortable({
+			placeholder: "ui-state-highlight",
+			update: function(event, ui){
+				var data = $(this).sortable('serialize');
 
+				$.ajax({
+					data: data,
+					type: 'POST',
+					url: '/cvadmin/order',
+				});
+			}
+		});
+		$( "#sortable" ).disableSelection();
+	} );
+	</script>
 @endsection
 
 @section('content')
