@@ -7,23 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-**Note:** Replace ```Eric Scuccimarra``` ```escuccim``` ```http://ericscuccimarra.com``` ```skooch@gmail.com``` ```escuccim``` ```resume``` ```Laravel package to generate an online CV``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can run `$ php prefill.php` in the command line to make all replacements at once. Delete the file prefill.php as well.
-
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
-
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practises by being named the following.
-
-```
-bin/        
-config/
-src/
-test/
-vendor/
-```
-
+This is a Laravel package which allows you to maintain and display an online CV in multiple languages. 
 
 ## Install
 
@@ -33,12 +17,39 @@ Via Composer
 $ composer require escuccim/resume
 ```
 
-## Usage
-
-``` php
-$skeleton = new Escuccim\Resume();
-echo $skeleton->echoPhrase('Hello, League!');
+Add the service provider to config/app.php
+```php
+Escuccim\Resume\resumeServiceProvider::class,
 ```
+
+Register the middleware in app/Http\Kernel.php
+```php
+'admin' => \Escuccim\Resume\Http\Middleware\AdminMiddleware::class,
+```
+
+Run the database migrations:
+```bash
+php artisan migrate
+```
+
+Publish the files if you so desire:
+```bash
+php artisan vendor:publish
+```
+
+## Usage
+The URI to CV administration is /cvadmin
+The URI to education administration is /education.
+
+You should add a route to point to the CV display in your own routes/web.php as follows:
+```php
+Route::get('[URI]', '\Escuccim\Resume\Http\Controllers\JobsController@cv');
+```
+
+The CV display for normal, displays the work history followed by education, and then if you wish to append anything else you can do so by creating the following file:
+/resources/views/cv/cv_extras.blade.php
+
+The CV display will include this view if it exists.
 
 ## Change log
 
