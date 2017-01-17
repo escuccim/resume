@@ -35,6 +35,11 @@ Publish the files if you so desire:
 php artisan vendor:publish
 ```
 
+If you want some of the Javascript functions to work properly, such as the drag and drop reordering of work history items, you need to add a section to your views/layouts/app.blade.php in the HTML header:
+```
+@yield('header')
+```
+
 ## Usage
 The URI to CV administration is /cvadmin
 The URI to education administration is /education.
