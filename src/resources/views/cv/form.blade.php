@@ -44,7 +44,7 @@
 <div class="form-group">
 	{!! Form::label('lang', 'Language:', ['class' => 'control-label col-md-1']) !!}
 	<div class="col-md-11">
-		{!! Form::select('lang', ['en' => 'en', 'fr' => 'fr'], null, ['class' => 'form-control', 'id' => 'lang']) !!}
+		{!! Form::select('lang', config('cv.langs'), null, ['class' => 'form-control', 'id' => 'lang']) !!}
 	</div>
 </div>
 

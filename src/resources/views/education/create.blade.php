@@ -11,7 +11,7 @@
                 <div class="panel-body">
                     @include('cv::errors.list')
                     {!! Form::model($education, ['url' => '/education', 'class' => 'form-horizontal']) !!}
-                    @include('education._form', ['submitButtonText' => 'Add Education'])
+                    @include('cv::education._form', ['submitButtonText' => 'Add Education'])
                     {!! Form::close() !!}
                 </div>
                 </div>
