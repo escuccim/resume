@@ -4,7 +4,7 @@
 [![Software License][ico-license]](LICENSE.md)
 [![Total Downloads][ico-downloads]][link-downloads]
 
-This is a Laravel package which allows you to maintain and display an online CV in multiple languages. It is not yet ready for public use, but should be soon.
+This is a Laravel package which allows you to maintain and display an online CV in multiple languages. 
 
 ## Install
 This package uses Laravel's standard Auth so if you do not have this you should add it before using this.
@@ -34,6 +34,11 @@ Publish the files if you so desire:
 ```bash
 php artisan vendor:publish
 ```
+There are different publishable groups of files:
+- config - published the config file to config/cv.php. This file contains only one value which is an array containing the languages available, currently english and french. If you want to add other languages publish this and add them there.
+- views - publishes my views to /resources/views/vendor/escuccim.
+
+I should also make the language files publishable but haven't gotten around to that yet.
 
 If you want some of the Javascript functions to work properly, such as the drag and drop reordering of work history items, you need to add a section to your views/layouts/app.blade.php in the HTML header:
 ```
