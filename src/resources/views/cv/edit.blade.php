@@ -8,8 +8,8 @@
 @section('content')
 	@include('errors.list')
 	
-	{!! Form::model($job, ['method' => 'patch', 'class' => 'form-horizontal', 'action' => ['JobsController@update', $job->id]]) !!}
-		@include('cv.form', ['submitButtonText' => 'Update Entry'])
+	{!! Form::model($job, ['method' => 'patch', 'class' => 'form-horizontal', 'action' => ['\Escuccim\Resume\Http\Controllers\JobsController@update', $job->id]]) !!}
+		@include('cv::cv.form', ['submitButtonText' => 'Update Entry'])
 	{!! Form::close() !!}
 
 @endsection

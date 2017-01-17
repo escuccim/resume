@@ -7,15 +7,15 @@
 @section('content')
 	<div class="row">
 		<div class="col-md-12">
-			@include('cv.cv-detail')
+			@include('cv::cv.cv-detail')
 		</div>
 	</div>
 	
 	<div class="row">
 		<div class="col-md-3 col-md-offset-4">
 			<div class="btn-group">
-				<a href="{{ action('JobsController@edit', [$job->id]) }}" class="btn btn-primary">Edit Row</a>
-				<a href="{{ action('JobsController@delete', [$job->id]) }}"  id="deleteBlog" class="btn btn-default">Delete Row</a>
+				<a href="{{ action('\Escuccim\Resume\Http\Controllers\JobsController@edit', [$job->id]) }}" class="btn btn-primary">Edit Row</a>
+				<a href="{{ action('\Escuccim\Resume\Http\Controllers\JobsController@delete', [$job->id]) }}"  id="deleteBlog" class="btn btn-default">Delete Row</a>
 			</div>
 		</div>
 	</div>	
@@ -36,11 +36,9 @@
 				url: '/cvadmin/{{ $job->id }}',
 				type: 'delete',
 				success: function(result){
-					//alert(result[1]);
-					//location.reload();
+					location.reload();
 					},
 				error: function(result){
-					//alert(result);
 					},
 				complete: function(result){
 					location.reload();

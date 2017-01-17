@@ -60,7 +60,7 @@ $( function() {
 						</form>
 					</div>
 					<div class="col-md-2">
-						<a href="{{ action('JobsController@create') }}" class="btn btn-primary btn-sm">Add Entry</a>
+						<a href="{{ action('\Escuccim\Resume\Http\Controllers\JobsController@create') }}" class="btn btn-primary btn-sm">Add Entry</a>
 					</div>
 				</div>
 			</div>
@@ -71,7 +71,7 @@ $( function() {
 						<li class="list-group-item ui-state-default" id="item-{{ $job->id }}">
 						<div class="row">
 							<div class="col-md-11">
-								<a href="{{ action('JobsController@show', [$job->id]) }}">{{ $job->company }} - {{ $job->position }}</a>
+								<a href="{{ action('\Escuccim\Resume\Http\Controllers\JobsController@show', [$job->id]) }}">{{ $job->company }} - {{ $job->position }}</a>
 							</div>
 							<div class="col-md-1">
 								{{ $job->lang }}

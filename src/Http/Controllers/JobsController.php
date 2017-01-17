@@ -5,6 +5,7 @@ namespace Escuccim\Resume\Http\Controllers;
 use Illuminate\Http\Request;
 use Escuccim\Resume\Models\Job;
 use Escuccim\Resume\Models\Education;
+use App\Http\Controllers\Controller;
 
 class JobsController extends Controller
 {
@@ -21,7 +22,7 @@ class JobsController extends Controller
 		$lang = getLocale();
         	$educations = Education::orderBy('end_date', 'desc')->language($lang)->get();
 		$jobs = Job::orderBy('order', 'asc')->language($lang)->get();
-		return view('cv.cv', compact('jobs', 'educations'));
+		return view('cv::cv.cv', compact('jobs', 'educations'));
 	}
 	
     /**
@@ -34,7 +35,7 @@ class JobsController extends Controller
     	$lang = $request->input('lang', 'all');
         $jobs = Job::orderBy('order', 'asc')->language($lang)->get();
         
-       	return view('cv.index', compact('jobs', 'lang'));
+       	return view('cv::cv.index', compact('jobs', 'lang'));
     }
 
     /**
@@ -44,7 +45,7 @@ class JobsController extends Controller
      */
     public function create()
     {
-        return view('cv.create');
+        return view('cv::cv.create');
     }
 
     /**
@@ -76,7 +77,7 @@ class JobsController extends Controller
     		return redirect('cvadmin');
     	}
     	
-    	return view('cv.show', compact('job'));
+    	return view('cv::cv.show', compact('job'));
     }
 
     /**
@@ -89,7 +90,7 @@ class JobsController extends Controller
     {
     	$job = Job::findOrFail($id);
     	
-    	return view('cv.edit', compact('job'));
+    	return view('cv::cv.edit', compact('job'));
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace Escuccim\Resume;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Routing\Router;
 
 class resumeServiceProvider extends ServiceProvider
 {
@@ -17,7 +18,7 @@ class resumeServiceProvider extends ServiceProvider
         $this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'cv');
 
         // use this if your package has lang files
-        $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'cv');
+        $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'cv-lang');
 
         // use this if your package has routes
         $this->setupRoutes($this->app->router);
@@ -27,7 +28,7 @@ class resumeServiceProvider extends ServiceProvider
 
         // publish config if necessary
         $this->publishes([
-            __DIR__.'/config/config.php' => config_path('cv.php'),
+            __DIR__.'/config/cv.php' => config_path('cv.php'),
             __DIR__.'/database/migrations' => database_path('migrations')
         ], 'config');
 
@@ -37,7 +38,7 @@ class resumeServiceProvider extends ServiceProvider
 
         // use the default configuration file as fallback
         $this->mergeConfigFrom(
-            __DIR__.'/config/config.php', 'cv'
+            __DIR__.'/config/cv.php', 'cv'
         );
     }
     /**

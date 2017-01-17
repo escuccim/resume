@@ -4,6 +4,7 @@ namespace Escuccim\Resume\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Escuccim\Resume\Models\Education;
+use App\Http\Controllers\Controller;
 
 class EducationController extends Controller
 {
