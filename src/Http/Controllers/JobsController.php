@@ -19,8 +19,8 @@ class JobsController extends Controller
 	 */
 	public function cv(){
 		setLanguage();
-		$lang = getLocale();
-        	$educations = Education::orderBy('end_date', 'desc')->language($lang)->get();
+		$lang = $this->getLocale();
+        $educations = Education::orderBy('end_date', 'desc')->language($lang)->get();
 		$jobs = Job::orderBy('order', 'asc')->language($lang)->get();
 		return view('cv::cv.cv', compact('jobs', 'educations'));
 	}
@@ -57,7 +57,8 @@ class JobsController extends Controller
     public function store(Request $request)
     {
     	$job = Job::create($request->all());
-    	
+    	$job->lang = $request->lang;
+    	$job->save();
     	flash()->success('The job entry has been successfully created');
     	
     	return redirect('cvadmin');
@@ -103,9 +104,9 @@ class JobsController extends Controller
     public function update(Request $request, $id)
     {
         $job = Job::findOrFail($id);
-        
         $job->update($request->all());
-        
+        $job->lang = $request->lang;
+        $job->save();
         flash()->success('The job entry has been updated!');
         
         return redirect('cvadmin');
@@ -139,4 +140,12 @@ class JobsController extends Controller
 			$i++;
 		}
 	}
+
+    public function getLocale(){
+        if(session('locale')){
+            return session('locale');
+        } else {
+           return config('app.locale');
+        }
+    }
 }

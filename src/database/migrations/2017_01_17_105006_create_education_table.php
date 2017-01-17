@@ -21,7 +21,7 @@ class CreateEducationTable extends Migration
             $table->date('start_date');
             $table->date('end_date');
             $table->string('location');
-            $table->string('lang');
+            $table->string('lang')->default('en');
             $table->timestamps();
 
         });
