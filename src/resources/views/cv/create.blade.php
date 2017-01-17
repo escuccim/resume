@@ -7,7 +7,7 @@
 
 @section('content')
 <div class="container">
-	{!! Form::model($job = new \App\Job, ['url' => 'cvadmin/store', 'class' => 'form-horizontal']) !!}
+	{!! Form::model($job = new \Escuccim\Resume\Models\Job, ['url' => 'cvadmin/store', 'class' => 'form-horizontal']) !!}
 		@include('cv::cv.form', ['submitButtonText' => 'Add Entry'])
 	{!! Form::close() !!}
 </div>
