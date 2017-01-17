@@ -20,7 +20,7 @@ class JobsController extends Controller
 	public function cv(){
 		setLanguage();
 		$lang = $this->getLocale();
-        $educations = Education::orderBy('end_date', 'desc')->language($lang)->get();
+        	$educations = Education::orderBy('end_date', 'desc')->language($lang)->get();
 		$jobs = Job::orderBy('order', 'asc')->language($lang)->get();
 		return view('cv::cv.cv', compact('jobs', 'educations'));
 	}
