@@ -5,7 +5,7 @@
 	<div class="col-md-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h4>{{ trans('cv.professionalexperience') }}</h4>
+				<h4>{{ trans('cv-lang::cv.professionalexperience') }}</h4>
 			</div>
 			<div class="panel-body">
 				<div class="panel-group" id="experience">
@@ -33,7 +33,7 @@
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h4>{{ trans('cv.education') }}</h4>
+				<h4>{{ trans('cv-lang::cv.education') }}</h4>
 			</div>
 			<div class="panel-body">
 				<div class="panel-group" id="education">

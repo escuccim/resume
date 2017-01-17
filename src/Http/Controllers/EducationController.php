@@ -14,12 +14,12 @@ class EducationController extends Controller
 
     public function index(){
         $educations = Education::get();
-        return view('education.index', compact('educations'));
+        return view('cv::education.index', compact('educations'));
     }
 
     public function create(){
         $education = new Education();
-        return view('education.create', compact('education'));
+        return view('cv::education.create', compact('education'));
     }
 
     public function store(Request $request){
@@ -41,7 +41,7 @@ class EducationController extends Controller
 
     public function edit($id){
         $education = Education::where('id', $id)->first();
-        return view('education.edit', compact('education'));
+        return view('cv::education.edit', compact('education'));
     }
 
     public function update($id, Request $request){

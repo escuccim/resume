@@ -1,7 +1,7 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h4>{{ trans('cv.computerskills') }}</h4>
+        <h4>{{ trans('cv-lang::cv.computerskills') }}</h4>
     </div>
     <div class="panel-body">
         <div class="panel-group">
@@ -29,7 +29,7 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h4>{{ trans('cv.languages') }}</h4>
+        <h4>{{ trans('cv-lang::cv.languages') }}</h4>
     </div>
     <div class="panel-body" id="collapse-languages">
         <p>{{ trans('about.english') }} - {{ trans('about.nativelanguage') }}
