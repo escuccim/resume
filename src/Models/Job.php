@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Escuccim\Resume\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
