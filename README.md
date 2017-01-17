@@ -43,6 +43,7 @@ You should add a route to point to the CV display in your own routes/web.php as 
 ```php
 Route::get('[URI]', '\Escuccim\Resume\Http\Controllers\JobsController@cv');
 ```
+Or if you prefer to design your own views you can publish mine and adjust them accordingly.
 
 The CV display for normal, displays the work history followed by education, and then if you wish to append anything else you can do so by creating the following file:
 /resources/views/cv/cv_extras.blade.php
