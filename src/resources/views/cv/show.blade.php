@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<div class="container">
 	<div class="row">
 		<div class="col-md-12">
 			@include('cv::cv.cv-detail')
@@ -19,32 +20,31 @@
 			</div>
 		</div>
 	</div>	
-@endsection
 
-@section('footer')
-<script>
-	$.ajaxSetup({
-	    headers: {
-	        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-	    }
-	});
-	$("#deleteBlog").click(function(e){
-		e.preventDefault();
-		var x = confirm("Are you sure you want to delete this?");
-		if(x){
-			$.ajax({
-				url: '/cvadmin/{{ $job->id }}',
-				type: 'delete',
-				success: function(result){
-					location.reload();
-					},
-				error: function(result){
-					},
-				complete: function(result){
-					location.reload();
-					},
-			});
-		}
-	});
-</script>
+	<script>
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		$("#deleteBlog").click(function(e){
+			e.preventDefault();
+			var x = confirm("Are you sure you want to delete this?");
+			if(x){
+				$.ajax({
+					url: '/cvadmin/{{ $job->id }}',
+					type: 'delete',
+					success: function(result){
+						location.reload();
+						},
+					error: function(result){
+						},
+					complete: function(result){
+						location.reload();
+						},
+				});
+			}
+		});
+	</script>
+</div>
 @endsection

@@ -6,8 +6,9 @@
 @endsection
 
 @section('content')
-	
+<div class="container">
 	{!! Form::model($job = new \App\Job, ['url' => 'cvadmin/store', 'class' => 'form-horizontal']) !!}
 		@include('cv::cv.form', ['submitButtonText' => 'Add Entry'])
 	{!! Form::close() !!}
+</div>
 @endsection
