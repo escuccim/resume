@@ -4,7 +4,7 @@
 [![Software License][ico-license]](LICENSE.md)
 [![Total Downloads][ico-downloads]][link-downloads]
 
-This is a Laravel package which allows you to maintain and display an online CV in multiple languages. It is not yet ready for public use, but should be soon.
+This is a Laravel package which allows you to maintain and display an online CV in multiple languages. 
 
 ## Install
 This package uses Laravel's standard Auth so if you do not have this you should add it before using this.
