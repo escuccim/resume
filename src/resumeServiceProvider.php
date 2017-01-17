@@ -33,6 +33,10 @@ class resumeServiceProvider extends ServiceProvider
         ], 'config');
 
         $this->publishes([
+            __DIR__.'/resources/lang', 'cv-lang' => base_path('resources/lang/vendor/cv-lang'),
+        ], 'lang');
+
+        $this->publishes([
             __DIR__ . '/resources/views' => base_path('resources/views/vendor/escuccim')
         ], 'views');
 
