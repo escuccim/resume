@@ -9,7 +9,7 @@ if ( ! function_exists('setLanguage')) {
 }
 
 if ( ! function_exists('isUserAdmin')) {
-    n isUserAdmin(){
+    function isUserAdmin(){
         if(Auth::guest())
             return false;
         else {
