@@ -75,7 +75,7 @@ class resumeServiceProvider extends ServiceProvider
     private function registerClass()
     {
         $this->app->bind('escuccim',function($app){
-            return new SiteMapClass($app);
+            return new CVClass($app);
         });
     }
 }
