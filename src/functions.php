@@ -7,3 +7,13 @@ if ( ! function_exists('setLanguage')) {
             setlocale(LC_TIME, 'fr_CH.UTF-8');
     }
 }
+
+if ( ! function_exists('isUserAdmin')) {
+    n isUserAdmin(){
+        if(Auth::guest())
+            return false;
+        else {
+            return (Auth::user()->type);
+        }
+    }
+}
