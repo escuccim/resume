@@ -32,7 +32,7 @@ class JobsController extends Controller
      */
     public function index(Request $request)
     {
-    	$lang = $request->input('lang', 'all');
+        $lang = $request->input('lang', 'all');
         $jobs = Job::orderBy('order', 'asc')->language($lang)->get();
         
        	return view('cv::cv.index', compact('jobs', 'lang'));
