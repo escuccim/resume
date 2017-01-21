@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class EducationController extends Controller
 {
     public function __construct(){
-        $this->middleware('admin');
+        $this->middleware(config('cv.admin_middleware'));
     }
 
     public function index(){

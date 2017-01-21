@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class JobsController extends Controller
 {
 	public function __construct(){
-		$this->middleware('admin')->except(['cv']);
+		$this->middleware(config('cv.admin_middleware'))->except(['cv']);
 	}
     
 	/**

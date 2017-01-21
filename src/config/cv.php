@@ -5,4 +5,5 @@ return [
         'en' => 'en',
         'fr' => 'fr',
     ],
+    'admin_middleware'  => 'admin',
 ];
