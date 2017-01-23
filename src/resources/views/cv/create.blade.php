@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-	<script>tinymce.init({ selector:'#description' });</script>
+	<script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 @endsection
 
 @section('content')
