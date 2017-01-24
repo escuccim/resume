@@ -6,27 +6,33 @@
 
 @section('content')
 <div class="container">
-	<div class="row">
-		<div class="col-md-12">
+	<div class="panel panel-default">
+		<div class="panel-heading">
 			<h2>{{ $job->company }} - {{ $job->position }}</h2>
-
-			<p><strong>Dates:</strong> {{ date('Y-m-d', strtotime($job->startdate)) }} to {{ date('Y-m-d', strtotime($job->enddate)) }}
-
-			<p><strong>Order:</strong> {{ $job->order }}
-
-			<p><strong>Description:</strong><br />
-			{!! $job->description !!}
 		</div>
-	</div>
-	
-	<div class="row">
-		<div class="col-md-3 col-md-offset-4">
-			<div class="btn-group">
-				<a href="{{ action('\Escuccim\Resume\Http\Controllers\JobsController@edit', [$job->id]) }}" class="btn btn-primary">Edit Row</a>
-				<a href="{{ action('\Escuccim\Resume\Http\Controllers\JobsController@delete', [$job->id]) }}"  id="deleteBlog" class="btn btn-default">Delete Row</a>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-12">
+					<p><strong>Dates:</strong> {{ date('Y-m-d', strtotime($job->startdate)) }} to {{ date('Y-m-d', strtotime($job->enddate)) }}
+
+					<p><strong>Order:</strong> {{ $job->order }}
+
+					<p><strong>Description:</strong><br />
+					{!! $job->description !!}
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3 col-md-offset-4">
+					<div class="btn-group">
+						<a href="{{ action('\Escuccim\Resume\Http\Controllers\JobsController@edit', [$job->id]) }}" class="btn btn-primary">Edit Row</a>
+						<a href="{{ action('\Escuccim\Resume\Http\Controllers\JobsController@delete', [$job->id]) }}"  id="deleteBlog" class="btn btn-default">Delete Row</a>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
+
 
 	<script>
 		$.ajaxSetup({
