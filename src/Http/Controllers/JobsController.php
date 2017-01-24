@@ -18,9 +18,8 @@ class JobsController extends Controller
 	 * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
 	 */
 	public function cv(){
-		setLanguage();
-		$lang = $this->getLocale();
-        	$educations = Education::orderBy('end_date', 'desc')->language($lang)->get();
+		$lang = app()->getLocale();
+        $educations = Education::orderBy('end_date', 'desc')->language($lang)->get();
 		$jobs = Job::orderBy('order', 'asc')->language($lang)->get();
 		return view('cv::cv.cv', compact('jobs', 'educations'));
 	}
@@ -140,12 +139,4 @@ class JobsController extends Controller
 			$i++;
 		}
 	}
-
-    public function getLocale(){
-        if(session('locale')){
-            return session('locale');
-        } else {
-           return config('app.locale');
-        }
-    }
 }
