@@ -10,3 +10,6 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Added middleware to config file
 - Replaced references in code to middleware to point to config file
 - Replaced TinyMCE with CKEditor because TinyMCE was getting annoying
+
+### Fixed
+- Removed locale specific functions, replaced with my translation package
