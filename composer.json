@@ -1,7 +1,7 @@
 {
     "name": "escuccim/resume",
     "type": "library",
-    "description": "resume",
+    "description": "A Laravel package to administer and display a multi-lingual CV",
     "keywords": [
         "escuccim",
         "resume",
