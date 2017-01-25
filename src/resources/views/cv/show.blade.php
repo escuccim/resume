@@ -23,10 +23,10 @@
 			</div>
 
 			<div class="row">
-				<div class="col-md-3 col-md-offset-4">
+				<div class="col-md-3 col-md-offset-5">
 					<div class="btn-group">
-						<a href="{{ action('\Escuccim\Resume\Http\Controllers\JobsController@edit', [$job->id]) }}" class="btn btn-primary">Edit Row</a>
-						<a href="{{ action('\Escuccim\Resume\Http\Controllers\JobsController@delete', [$job->id]) }}"  id="deleteBlog" class="btn btn-default">Delete Row</a>
+						<a href="{{ action('\Escuccim\Resume\Http\Controllers\JobsController@edit', [$job->id]) }}" class="btn btn-primary">{!! trans('cv-lang::cv.editentry') !!}</a>
+						<a href="{{ action('\Escuccim\Resume\Http\Controllers\JobsController@delete', [$job->id]) }}"  id="deleteBlog" class="btn btn-default">{!! trans('cv-lang::cv.deleteentry') !!}</a>
 					</div>
 				</div>
 			</div>

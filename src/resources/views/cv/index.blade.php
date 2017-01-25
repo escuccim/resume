@@ -41,7 +41,7 @@
 				<div class="panel-heading gray">
 					<div class="row">
 						<div class="col-md-7">
-							<h3>CV Administration</h3>
+							<h3>{!! trans('cv-lang::cv.professionalexperience') !!}</h3>
 						</div>
 						<div class="col-md-3">
 							<form action="/cvadmin" method="get" class="form-horizontal" id="langselect">
@@ -59,7 +59,7 @@
 							</form>
 						</div>
 						<div class="col-md-2">
-							<a href="{{ action('\Escuccim\Resume\Http\Controllers\JobsController@create') }}" class="btn btn-primary btn-sm">Add Entry</a>
+							<a href="{{ action('\Escuccim\Resume\Http\Controllers\JobsController@create') }}" class="btn btn-primary btn-sm">{!! trans('cv-lang::cv.addentry') !!}</a>
 						</div>
 					</div>
 				</div>

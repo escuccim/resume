@@ -11,7 +11,7 @@
                     <div class="panel-body">
                         @include('cv::errors.list')
                         {!! Form::model($education, ['action' => ['\Escuccim\Resume\Http\Controllers\EducationController@update', $education->id], 'class' => 'form-horizontal', 'method' => 'patch']) !!}
-                        @include('cv::education._form', ['submitButtonText' => 'Edit Education'])
+                        @include('cv::education._form', ['submitButtonText' => trans('cv-lang::cv.update')])
                         {!! Form::close() !!}
                     </div>
                 </div>
