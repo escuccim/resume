@@ -29,7 +29,6 @@ class resumeServiceProvider extends ServiceProvider
         // publish config if necessary
         $this->publishes([
             __DIR__.'/config/cv.php' => config_path('cv.php'),
-            __DIR__.'/database/migrations' => database_path('migrations')
         ], 'config');
 
         $this->publishes([
@@ -37,7 +36,7 @@ class resumeServiceProvider extends ServiceProvider
         ], 'lang');
 
         $this->publishes([
-            __DIR__ . '/resources/views' => base_path('resources/views/vendor/escuccim')
+            __DIR__ . '/resources/views' => base_path('resources/views/vendor/cv')
         ], 'views');
 
         // use the default configuration file as fallback
