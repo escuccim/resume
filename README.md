@@ -18,13 +18,17 @@ $ composer require escuccim/resume
 Add the service provider to config/app.php
 ```php
 Escuccim\Resume\resumeServiceProvider::class,
+Collective\Html\HtmlServiceProvider::class,
 ```
-
+And add the following to the aliases array:
+```php
+'Form' => Collective\Html\FormFacade::class,
+'Html' => Collective\Html\HtmlFacade::class,
+```
 Register the middleware in app/Http\Kernel.php
 ```php
 'admin' => \Escuccim\Resume\Http\Middleware\AdminMiddleware::class,
 ```
-
 Run the database migrations:
 ```bash
 php artisan migrate
