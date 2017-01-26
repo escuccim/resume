@@ -13,3 +13,4 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Fixed
 - Removed locale specific functions, replaced with my translation package
+- Fixed problem with namespace and location of middleware
