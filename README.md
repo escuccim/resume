@@ -44,8 +44,10 @@ There are different publishable groups of files:
 
 If you want some of the Javascript functions to work properly such as the drag and drop reordering of work history items, you need to add a section to your views/layouts/app.blade.php in the HTML header:
 ```
+<script src="/js/app.js"></script>
 @yield('header')
 ```
+The script tag referencing app.js will need to be moved from the bottom of the layout file to the header for the Javascript functions to work properly.
 
 ## Usage
 The URI to CV administration is /cvadmin
