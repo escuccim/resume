@@ -19,6 +19,7 @@ Add the service provider to config/app.php
 ```php
 Escuccim\Resume\resumeServiceProvider::class,
 Collective\Html\HtmlServiceProvider::class,
+Laracasts\Flash\FlashServiceProvider::class,
 ```
 And add the following to the aliases array:
 ```php
