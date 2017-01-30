@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('header')
+@push('scripts')
 	<style>
 		#sortable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
 		.ui-state-highlight { height: 1.5em; line-height: 1.2em; }
@@ -31,7 +31,7 @@
 		$( "#sortable" ).disableSelection();
 	} );
 	</script>
-@endsection
+@endpush
 
 @section('content')
 <div class="container">

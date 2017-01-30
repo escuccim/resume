@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('header')
+@push('scripts')
 	<script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
-@endsection
+@endpush
 
 @section('content')
 <div class="container">

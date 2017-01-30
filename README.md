@@ -19,6 +19,7 @@ Add the service provider to config/app.php
 ```php
 Escuccim\Resume\resumeServiceProvider::class,
 Collective\Html\HtmlServiceProvider::class,
+Laracasts\Flash\FlashServiceProvider::class,
 ```
 And add the following to the aliases array:
 ```php
@@ -42,12 +43,12 @@ There are different publishable groups of files:
 - config - published the config file to config/cv.php. This file contains only one value which is an array containing the languages available, currently english and french. If you want to add other languages publish this and add them there.
 - views - publishes my views to /resources/views/vendor/escuccim.
 
-If you want some of the Javascript functions to work properly such as the drag and drop reordering of work history items, you need to add a section to your views/layouts/app.blade.php in the HTML header:
+If you wish to use the WYSIQYG HTML editor you will need to add the following to the layouts/app.blade.php file, and remove the script tag referencing app.js from the bottom:
 ```
 <script src="/js/app.js"></script>
-@yield('header')
+@stack('scripts')
 ```
-The script tag referencing app.js will need to be moved from the bottom of the layout file to the header for the Javascript functions to work properly.
+If you do not wish to use the WYSIWYG editor you can leave the layout file unchanged.
 
 ## Usage
 The URI to CV administration is /cvadmin

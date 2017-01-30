@@ -15,3 +15,4 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Removed locale specific functions, replaced with my translation package
 - Fixed problem with namespace and location of middleware
 - Removed irrelevant tables from migrations
+- Replaced header section in views with a push to stack scripts, which makes more sense
