@@ -1,56 +1,60 @@
 <div class="form-group">
-	{!! Form::label('company', trans('cv-lang::cv.company'), ['class' => 'control-label col-md-1']) !!}
+	<label for="company" class="control-label col-md-1">{!! trans('cv-lang::cv.company') !!}</label>
 	<div class="col-md-11">
-		{!! Form::text('company', null, ['class' => 'form-control', 'size' => 100]) !!}
+		<input class="form-control" size="100" name="company" type="text" id="company" value="{{$job->company}}">
 	</div>
 </div>
 
 <div class="form-group">
-	{!! Form::label('position', trans('cv-lang::cv.position'), ['class' => 'control-label col-md-1']) !!}
+	<label for="position" class="control-label col-md-1">{!! trans('cv-lang::cv.position') !!}</label>
 	<div class="col-md-11">
-		{!! Form::text('position', null, ['class' => 'form-control', 'size' => 100]) !!}
+		<input class="form-control" size="100" name="position" type="text" id="position" value="{{$job->position}}">
 	</div>
 </div>
 	
 <div class="form-group">
-	{!! Form::label('order', trans('cv-lang::cv.order'), ['class' => 'control-label col-md-1']) !!}
+	<label for="order" class="control-label col-md-1">{!! trans('cv-lang::cv.order') !!}</label>
 	<div class="col-md-11">
-		{!! Form::text('order', null, ['class' => 'form-control', 'size' => 5]) !!}
+		<input class="form-control" name="order" type="text" id="order" value="{{$job->order}}">
 	</div>
 </div>
 
 
 <div class="form-group">
-	{!! Form::label('startdate', trans('cv-lang::cv.start'), ['class' => 'control-label col-md-1']) !!}
+	<label for="startdate" class="control-label col-md-1">{!! trans('cv-lang::cv.start') !!}</label>
 	<div class="col-md-11">
-		{!! Form::input('date', 'startdate', $job->startdate->format('Y-m-d'), ['class' => 'form-control', 'size' => 100]) !!}
+		<input class="form-control" size="100" name="startdate" type="date" value="{{$job->startdate->format('Y-m-d')}}" id="startdate">
 	</div>
 </div>
 
 <div class="form-group">
-	{!! Form::label('enddate', trans('cv-lang::cv.end'), ['class' => 'control-label col-md-1']) !!}
+	<label for="enddate" class="control-label col-md-1">{!! trans('cv-lang::cv.end') !!}</label>
 	<div class="col-md-11">
-		{!! Form::input('date', 'enddate', $job->enddate->format('Y-m-d'), ['class' => 'form-control', 'size' => 100]) !!}
+		<input class="form-control" size="100" name="enddate" type="date" value="{{$job->enddate->format('Y-m-d')}}" id="enddate">
 	</div>
 </div>
 
 <div class="form-group">
-	{!! Form::label('description', trans('cv-lang::cv.description'), ['class' => 'control-label col-md-1']) !!}
+	<label for="description" class="control-label col-md-1">{!! trans('cv-lang::cv.description') !!}</label>
 	<div class="col-md-11">
-		{!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'description']) !!}
+		<textarea class="form-control" id="description" name="description" cols="50" rows="10">{{$job->description}}</textarea>
 	</div>
 </div>
 
 <div class="form-group">
-	{!! Form::label('lang', trans('cv-lang::cv.language'), ['class' => 'control-label col-md-1']) !!}
+	<label for="lang" class="control-label col-md-1">{!! trans('cv-lang::cv.language') !!}</label>
 	<div class="col-md-11">
-		{!! Form::select('lang', config('cv.langs'), null, ['class' => 'form-control', 'id' => 'lang']) !!}
+		<select class="form-control" id="lang" name="lang">
+			@foreach(config('cv.langs') as $key => $value)
+				<option value="{{$key}}" {{ $key == $job->lang ? 'selected="SELECTED"' : '' }}>{{$value}}</option>
+			@endforeach
+		</select>
 	</div>
 </div>
 
 <div class="form-group">
 	<div class="col-md-2 col-md-offset-5">
-		{!! Form::submit($submitButtonText, ['class' => 'btn btn-primary']) !!}
+		<button type="submit" class="btn btn-primary">{{$submitButtonText}}</button>
 	</div>
 </div>
 

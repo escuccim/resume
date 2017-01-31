@@ -44,7 +44,8 @@ class JobsController extends Controller
      */
     public function create()
     {
-        return view('cv::cv.create');
+        $job = new Job();
+        return view('cv::cv.create', compact('job'));
     }
 
     /**

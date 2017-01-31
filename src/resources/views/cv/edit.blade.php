@@ -7,9 +7,10 @@
 @section('content')
 <div class="container">
 	@include('cv::errors.list')
-	
-	{!! Form::model($job, ['method' => 'patch', 'class' => 'form-horizontal', 'action' => ['\Escuccim\Resume\Http\Controllers\JobsController@update', $job->id]]) !!}
+	<form action="/cvadmin/{{$job->id}}" method="post" accept-charset="UTF-8" class="form-horizontal">
+		{{ csrf_field() }}
+		<input name="_method" type="hidden" value="PATCH">
 		@include('cv::cv.form', ['submitButtonText' => trans('cv-lang::cv.update')])
-	{!! Form::close() !!}
+	</form>
 </div>
 @endsection

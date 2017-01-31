@@ -6,8 +6,8 @@
 
 @section('content')
 <div class="container">
-	{!! Form::model($job = new \Escuccim\Resume\Models\Job, ['url' => 'cvadmin', 'class' => 'form-horizontal']) !!}
+	<form action="/cvadmin" method="post" class="form-horizontal">
 		@include('cv::cv.form', ['submitButtonText' => trans('cv-lang::cv.update')])
-	{!! Form::close() !!}
+	</form>
 </div>
 @endsection
