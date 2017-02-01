@@ -16,3 +16,4 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Fixed problem with namespace and location of middleware
 - Removed irrelevant tables from migrations
 - Replaced header section in views with a push to stack scripts, which makes more sense
+- Replaced references to Laravel's form functions with just normal forms, for ease of use
