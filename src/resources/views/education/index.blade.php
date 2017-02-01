@@ -38,9 +38,11 @@
                                     <td>{{ $education->end_date }}</td>
                                     <td>{{ $education->lang }}</td>
                                     <td><a href="/education/{{ $education->id }}/edit" class="btn btn-sm btn-primary">{!! trans('cv-lang::cv.editentry') !!}</a></td>
-                                    {!! Form::open(['url' => '/education/' . $education->id, 'method' => 'delete']) !!}
+                                    <form method="POST" action="/education/{{$education->id}}" accept-charset="UTF-8">
+                                        {{csrf_field()}}
+                                        <input name="_method" type="hidden" value="DELETE">
                                     <td><button type="submit" class="btn btn-sm btn-default">{!! trans('cv-lang::cv.deleteentry') !!}</button></td>
-                                    {!! Form::close() !!}
+                                    </form>
                                 </tr>
                             @endforeach
                         </tbody>

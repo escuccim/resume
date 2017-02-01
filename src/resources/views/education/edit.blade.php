@@ -10,9 +10,11 @@
                     </div>
                     <div class="panel-body">
                         @include('cv::errors.list')
-                        {!! Form::model($education, ['action' => ['\Escuccim\Resume\Http\Controllers\EducationController@update', $education->id], 'class' => 'form-horizontal', 'method' => 'patch']) !!}
-                        @include('cv::education._form', ['submitButtonText' => trans('cv-lang::cv.update')])
-                        {!! Form::close() !!}
+                        <form method="POST" action="/education/{{$education->id}}" accept-charset="UTF-8" class="form-horizontal">
+                            {{csrf_field()}}
+                            <input name="_method" type="hidden" value="PATCH">
+                            @include('cv::education._form', ['submitButtonText' => trans('cv-lang::cv.update')])
+                        </form>
                     </div>
                 </div>
             </div>
