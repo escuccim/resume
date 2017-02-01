@@ -14,6 +14,7 @@ class Job extends Model
 			'startdate',
 			'enddate',
 			'description',
+            'lang',
 	];
 	
 	protected $dates = [
