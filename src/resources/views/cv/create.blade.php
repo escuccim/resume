@@ -7,7 +7,8 @@
 @section('content')
 <div class="container">
 	<form action="/cvadmin" method="post" class="form-horizontal">
-		@include('cv::cv.form', ['submitButtonText' => trans('cv-lang::cv.update')])
+		{{csrf_field()}}
+			@include('cv::cv.form', ['submitButtonText' => trans('cv-lang::cv.update')])
 	</form>
 </div>
 @endsection
