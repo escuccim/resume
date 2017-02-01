@@ -57,7 +57,6 @@ class JobsController extends Controller
     public function store(Request $request)
     {
     	$job = Job::create($request->all());
-    	$job->lang = $request->lang;
     	$job->save();
     	flash()->success('The job entry has been successfully created');
     	
@@ -105,7 +104,6 @@ class JobsController extends Controller
     {
         $job = Job::findOrFail($id);
         $job->update($request->all());
-        $job->lang = $request->lang;
         $job->save();
         flash()->success('The job entry has been updated!');
         
