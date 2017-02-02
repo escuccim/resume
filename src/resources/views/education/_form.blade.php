@@ -27,21 +27,21 @@
 </div>
 
 <div class="form-group">
-    <label for="start_date" class="control-label col-md-2">{{trans('cv-lang::cv.start')}}:</label>
+    <label for="start_date" class="control-label col-md-2">{{trans('cv-lang::cv.start')}}</label>
     <div class="col-md-10">
         <input class="form-control" name="start_date" type="date" value="{{date('Y-m-d', strtotime($education->start_date))}}" id="start_date">
     </div>
 </div>
 
 <div class="form-group">
-    <label for="end_date" class="control-label col-md-2">{{trans('cv-lang::cv.end')}}:</label>
+    <label for="end_date" class="control-label col-md-2">{{trans('cv-lang::cv.end')}}</label>
     <div class="col-md-10">
         <input class="form-control" name="end_date" type="date" value="{{date('Y-m-d', strtotime($education->end_date))}}" id="end_date">
     </div>
 </div>
 
 <div class="form-group">
-    <label for="lang" class="control-label col-md-2">{{trans('cv-lang::cv.language')}}:</label>
+    <label for="lang" class="control-label col-md-2">{{trans('cv-lang::cv.language')}}</label>
     <div class="col-md-10">
         <select class="form-control" id="lang" name="lang">
             @foreach(config('cv.langs') as $lang => $display)

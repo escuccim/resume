@@ -33,8 +33,6 @@ class EducationController extends Controller
         ]);
         // store the data
         $education = Education::create($request->all());
-        $education->lang = $request->lang;
-        $education->save();
         // redirect
         return redirect('/education');
     }
@@ -55,8 +53,6 @@ class EducationController extends Controller
         ]);
         $education = Education::find($id);
         $education->update($request->all());
-        $education->lang = $request->lang;
-        $education->save();
         return redirect('/education');
     }
 

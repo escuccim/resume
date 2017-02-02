@@ -13,6 +13,7 @@ class Education extends Model
         'start_date',
         'end_date',
         'location',
+        'lang',
     ];
 
     public function scopeLanguage($query, $lang){
