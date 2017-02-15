@@ -3,8 +3,10 @@
     "type": "library",
     "description": "A Laravel package to administer and display a multi-lingual CV",
     "keywords": [
+        "laravel",
         "escuccim",
         "resume",
+        "multilingual",
         "curriculum vitae"
     ],
     "homepage": "https://github.com/escuccim/resume",
