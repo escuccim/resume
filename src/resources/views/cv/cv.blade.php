@@ -46,7 +46,7 @@
 											href="#education{{$education->id}}">{{$education->school}} - {{ $education->degree }}</a>
 									</h4>
 								</div>
-								<div id="education{{$education->id}}" class="panel-collapse collapse">
+								<div id="education{{$education->id}}" class="panel-collapse">
 									<div class="panel-body">
 										<p>{{ $education->location }}
 										<p>{!! $education->major !!}, {{ date('m/Y', strtotime($education->end_date)) }}
