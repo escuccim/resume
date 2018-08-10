@@ -19,7 +19,7 @@
 									</h4>
 								</div>
 
-								<div id="collapse{{ $job->id }}" class="panel-collapse collapse">
+								<div id="collapse{{ $job->id }}" class="panel-collapse">
 									<div class="panel-body">
 										<p><strong>{{ date('m/Y', strtotime($job->startdate)) }} - {{ date('m/Y', strtotime($job->enddate)) }}</strong>
 
