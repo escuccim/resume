@@ -61,7 +61,7 @@
             
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Certificates</h4>
+                    <h4>{{ trans('cv-lang::cv.certificates') }}</h4>
                 </div>
                 <div class="panel-body">
                     <div class="panel-group" id="education">
