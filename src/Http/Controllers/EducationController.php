@@ -30,6 +30,7 @@ class EducationController extends Controller
             'major' => 'required',
             'end_date' => 'required',
             'lang' => 'required',
+            'type' => 'required',
         ]);
         // store the data
         $education = Education::create($request->all());
@@ -50,6 +51,7 @@ class EducationController extends Controller
             'major' => 'required',
             'end_date' => 'required',
             'lang' => 'required',
+            'type' => 'required'
         ]);
         $education = Education::find($id);
         $education->update($request->all());
