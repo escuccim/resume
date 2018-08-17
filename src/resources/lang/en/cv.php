@@ -23,4 +23,5 @@ return [
     'degree'    => 'Degree',
     'major'     => 'Major',
     'date'      => 'Date',
+    'type'      => 'Type',
     ];
