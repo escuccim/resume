@@ -58,7 +58,7 @@
 					</div>
 				</div>
 			</div>
-            @if(count($educations->where('type', 'certificate')))
+            @if($educations->where('type', 'certificate'))
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4>Certificates</h4>
