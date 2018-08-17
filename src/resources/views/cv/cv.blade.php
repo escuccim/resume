@@ -58,6 +58,34 @@
 					</div>
 				</div>
 			</div>
+            @if(count($educations->where('type', 'certificate')))
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Certificates</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="panel-group" id="education">
+                            @foreach($educations->where('type', 'certificate') as $education)
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#education"
+                                                href="#education{{$education->id}}">{{$education->school}} - {{ $education->degree }}</a>
+                                        </h4>
+                                    </div>
+                                    <div id="education{{$education->id}}" class="panel-collapse">
+                                        <div class="panel-body">
+                                            <p>{{ $education->location }}
+                                            <p>{!! $education->major !!}, {{ date('m/Y', strtotime($education->end_date)) }}
+
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            @endif
 			@if(View::exists('cv.cv_extras'))
 				@include('cv.cv_extras')
 			@endif
