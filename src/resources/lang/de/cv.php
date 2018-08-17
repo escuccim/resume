@@ -22,4 +22,5 @@ return [
     'degree'    => 'Degree',
     'major'     => 'Major',
     'date'      => 'Date',
+    'certificates' => 'Zertifikat',
     ];
