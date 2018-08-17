@@ -38,7 +38,7 @@
 				</div>
 				<div class="panel-body">
 					<div class="panel-group" id="education">
-						@foreach($educations as $education)
+						@foreach($educations->where('type', 'degree') as $education)
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
