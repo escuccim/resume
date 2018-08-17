@@ -20,6 +20,13 @@
 </div>
 
 <div class="form-group">
+    <label for="degree" class="control-label col-md-2">{{trans('cv-lang::cv.type')}}:</label>
+    <div class="col-md-10">
+        <input class="form-control" name="type" type="text" value="{{$education->type}}" id="degree">
+    </div>
+</div>
+
+<div class="form-group">
     <label for="major" class="control-label col-md-2">{{trans('cv-lang::cv.major')}}:</label>
     <div class="col-md-10">
         <input class="form-control" name="major" type="text" value="{{$education->major}}" id="major">
